@@ -1,0 +1,19 @@
+{
+    "model_name": "SetDiffAvgEmb",
+    "tokenizer_name": "Unigram",
+    "learning_rate": 0.00001,
+    "l2penalty": 0.000001,
+    "vocab_file": "data/grid/grid.vocab",
+    "train_file": "data/grid/grid.train",
+    "dev_file": "data/grid/grid.dev",
+    "test_file": "data/grid/grid.test",
+    "num_minibatches": 100000,
+    "batch_size": 16,
+    "dev_batch_size": 32,
+    "max_num_unigram": 40,
+    "random_seed": 2524,
+    "dropout_rate": 0.3,
+    "eval_every_minibatch": 10000,
+    "clip": 0.25,
+    "codec": "utf-8" 
+}

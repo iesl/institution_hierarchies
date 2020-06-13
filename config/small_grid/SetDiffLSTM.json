@@ -1,0 +1,20 @@
+{
+    "model_name": "SetDiffLSTM",
+    "tokenizer_name": "Unigram",
+    "learning_rate": 0.00001,
+    "l2penalty": 0.000001,
+    "vocab_file": "data/small_grid/small_grid.vocab",
+    "train_file": "data/small_grid/small_grid.train",
+    "dev_file": "data/small_grid/small_grid.dev",
+    "test_file": "data/small_grid/small_grid.test",
+    "num_minibatches": 400,
+    "batch_size": 16,
+    "dev_batch_size": 32,
+    "max_num_unigram": 40,
+    "num_encoder_layers": 2,
+    "random_seed": 2524,
+    "dropout_rate": 0.3,
+    "eval_every_minibatch": 100,
+    "clip": 0.25,
+    "codec": "utf-8" 
+}
