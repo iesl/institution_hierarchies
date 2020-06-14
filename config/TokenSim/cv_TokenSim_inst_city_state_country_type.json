@@ -1,0 +1,16 @@
+{
+    "grid_search_fields": ["fold"],
+    "model_name": "TokenSim",
+    "tokenizer_name": "Unigram",
+    "inst_tokenizer_name": "Unigram",
+    "city_tokenizer_name": "Unigram",
+    "state_tokenizer_name": "Char",
+    "country_tokenizer_name": "Char",
+    "type_tokenizer_name": "Char",
+    "include_city": "True",
+    "include_state": "True",
+    "include_country": "True",
+    "include_type": "True",
+    "fold": [0, 1, 2, 3, 4],
+    "codec": "utf-8" 
+}

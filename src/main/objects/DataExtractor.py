@@ -82,7 +82,7 @@ class DataExtractor(object):
                 batch_data.append([qry_data, pos_data, neg_data])
 
         else:
-            for (qry_id, cnd_id) in list(batch_ids):
+            for (qry_id, cnd_id) in list(zip(*batch_ids)):
                 qry_data = []
                 cnd_data = []
 

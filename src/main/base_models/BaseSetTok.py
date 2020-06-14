@@ -2,6 +2,7 @@
 from main.objects.Vocab import Vocab
 from main.utils.token_lookup import get_qry_pos_neg_insct_min_tok_lookup, get_qry_cnd_insct_min_tok_lookup
 
+import os
 import numpy as np
 import torch
 
@@ -34,7 +35,11 @@ class BaseSetTok(torch.nn.Module):
                 else:
                     max_len_token = list_max_len_token[idx][1]
 
-                vocab_file = config.vocab_file + "_" + tokenizer_name.lower()
+                if self.config.fold is not None:
+                    vocab_file = os.path.join("data", "cross_validation", "fold_%d" % self.config.fold, "vocab_"+ tokenizer_name.lower())
+                else:
+                    vocab_file = os.path.join("data", "orig_dataset", "vocab_"+ tokenizer_name.lower())
+
                 vocab = Vocab(vocab_file, max_len_token)
 
                 self.dict_vocab[len(self.dict_vocab)] = vocab

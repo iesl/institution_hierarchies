@@ -15,11 +15,6 @@ class Config(object):
         '''
         self.learning_rate = 0.0001
         self.l2penalty = 10.0
-        self.vocab_file = None
-        self.train_file = None
-        self.dev_file = None
-        self.test_file = None
-
         self.fold = None
 
         self.num_batches = 10000
@@ -93,7 +88,6 @@ class Config(object):
         self.dropout_rate = 0.2
         self.clip = 0.25
 
-        self.dataset_name = "dataset"
         self.model_name = "model"
         self.tokenizer_name = "tokenizer"
         self.random = random.Random(self.random_seed)
@@ -140,10 +134,3 @@ class Config(object):
                 self.__dict__[k] = False
             elif self.__dict__[k] == "True":
                 self.__dict__[k] = True
-
-    def update_dataset(self):
-        '''
-        Updates the dataset appropriately by looking at the training filename 
-        '''
-        self.dataset_name = '/'.join(str.split(self.train_file, '/')[1:2])
-

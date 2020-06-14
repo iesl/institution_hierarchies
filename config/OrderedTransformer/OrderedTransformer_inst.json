@@ -1,0 +1,20 @@
+{
+    "model_name": "OrderedTransformer",
+    "learning_rate": 0.001,
+    "l2penalty": 0.000001,
+    "eval_every_minibatch": 100,
+    "batch_size": 32,
+    "dev_batch_size": 32,
+    "max_num_inst_unigram": 25,
+    "inst_tokenizer_name": "Unigram",
+    "inst_emb_dim": 256,
+    "inst_trans_num_layers": 2,
+    "inst_ff_dim": 256,
+    "inst_num_heads": 4,
+    "include_city": "False",
+    "include_state": "False",
+    "include_country": "False",
+    "include_type": "False",
+    "clip": 0.25,
+    "codec": "utf-8" 
+}

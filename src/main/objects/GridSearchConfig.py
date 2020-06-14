@@ -21,10 +21,6 @@ class GridSearchConfig(Config):
 
         self.learning_rate = 0.0001
         self.l2penalty = 10.0
-        self.vocab_file = None
-        self.train_file = None
-        self.dev_file = None
-        self.test_file = None
 
         self.num_batches = 10000
         self.eval_every_minibatch = 400
@@ -92,7 +88,6 @@ class GridSearchConfig(Config):
         self.dropout_rate = 0.2
         self.clip = 0.25
 
-        self.dataset_name = "dataset"
         self.model_name = "model"
         self.tokenizer_name = "tokenizer"
         self.random = random.Random(self.random_seed)
@@ -153,10 +148,3 @@ class GridSearchConfig(Config):
             for param,setting in zip(self.grid_search_fields,param_setting):
                 new_config.__dict__[param] = setting
             yield new_config
-
-    def update_dataset(self):
-        '''
-        Updates the dataset appropriately by looking at the training filename 
-        '''
-        self.dataset_name = '/'.join(str.split(self.train_file, '/')[1:2])
-

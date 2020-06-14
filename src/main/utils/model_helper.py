@@ -2,7 +2,6 @@ from main.models.SetTransformer import SetTransformer
 from main.models.SetAvgEmb import SetAvgEmb
 from main.models.OrderedLSTM import OrderedLSTM
 from main.models.OrderedTransformer import OrderedTransformer
-from main.models.SetBoxEmb import SetBoxEmb
 
 from main.baselines.TokenSim import TokenSim
 
@@ -24,8 +23,6 @@ def get_model(config, data_extractor, tokenizer):
         model = SetAvgEmb(config, data_extractor, tokenizer)
     elif config.model_name == "SetTransformer":
         model = SetTransformer(config, data_extractor, tokenizer)
-    elif config.model_name == "SetBoxEmb":
-        model = SetBoxEmb(config, data_extractor, tokenizer)
     elif config.model_name == "OrderedLSTM":
         model = OrderedLSTM(config, data_extractor, tokenizer)
     elif config.model_name == "OrderedTransformer":

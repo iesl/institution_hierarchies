@@ -47,10 +47,8 @@ def make_exp_dir(config):
     '''
     Makes experiment directory which includes timestamp to ensure distinct 
     
-    param dataset_name: name of dataset 
-    param model_name: name of model 
-    param tokenizer_name: name of tokenizer
-    return: experiment directory name 
+    param config: config
+    return: experiment directory name
     '''
 
     now = datetime.datetime.now()
@@ -67,7 +65,7 @@ def make_exp_dir(config):
     if config.include_type:
         field_name += "_type"
 
-    exp_dir = os.path.join("exp_out", config.dataset_name, config.model_name, field_name, ts)
+    exp_dir = os.path.join("exp_out", config.model_name, field_name, ts)
     make_directory(exp_dir)
 
     return exp_dir

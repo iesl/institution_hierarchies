@@ -16,13 +16,12 @@ class Evaluator(object):
     def __init__(self, config, input_type, exp_dir, list_k, labeled_file=None, output_file=None, is_write=False):
         '''
         param config: configuration to use for evaluation 
-        param vocab: vocabulary to use 
-        param tokenizer: tokenizer to use 
         param input_type: input type of either dev/test
         param exp_dir: experiment directory to save output
         param list_k: list of k to evaluate hits@k
         param labeled_file: labeled file to use for labels (default is specified in config )
-        param output_file: output file to use for writing prediction 
+        param output_file: output file to use for writing prediction
+        param is_write: whether to write or not
         '''
         self.batcher = Batcher(config, input_type, labeled_file)
         self.config = config

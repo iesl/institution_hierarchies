@@ -1,0 +1,19 @@
+{
+    "model_name": "SetAvgEmb",
+    "learning_rate": 0.001,
+    "l2penalty": 0.0001,
+    "num_batches": 10000,
+    "eval_every_minibatch": 1000,
+    "batch_size": 32,
+    "mlp": "True",
+    "dev_batch_size": 32,
+    "max_num_inst_unigram": 25,
+    "inst_tokenizer_name": "Unigram",
+    "inst_emb_dim": 256,
+    "include_city": "False",
+    "include_state": "False",
+    "include_country": "False",
+    "include_type": "False",
+    "clip": 0.25,
+    "codec": "utf-8" 
+}

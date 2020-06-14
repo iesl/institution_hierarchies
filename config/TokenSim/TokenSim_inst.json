@@ -1,0 +1,11 @@
+{
+    "model_name": "TokenSim",
+    "tokenizer_name": "Unigram",
+    "inst_tokenizer_name": "Unigram",
+    "include_city": "False",
+    "include_state": "False",
+    "include_country": "False",
+    "include_type": "False",
+    "random_seed": 2524,
+    "codec": "utf-8" 
+}

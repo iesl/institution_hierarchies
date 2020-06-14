@@ -24,10 +24,8 @@ def train_model(config, exp_dir):
     """ Train based on the given config, model / dataset
     
     param config: config object
-    param dataset_name: name of dataset
-    param model_name: name of model
+    param exp: exp_dir
     """
-
 
     data_extractor = DataExtractor(config)
     tokenizer = Tokenizer(config)
@@ -47,14 +45,10 @@ def train_model(config, exp_dir):
         torch.nn.utils.clip_grad_norm_(model.parameters(), config.clip)
         optimizer.step()
 
-        if train_num_batches % 100 == 0:
-            print("Num Batches: %d" % train_num_batches, end='\r')
-            sys.stdout.flush()
         # Save model checkpoint
         if train_num_batches > 0 and train_num_batches % config.eval_every_minibatch == 0:
             model.eval()
             dev_evaluator.evaluate(model, train_num_batches, float(loss))
-            # torch.save(model, os.path.join(exp_dir, "model_%d_batches" % exp_dir))
 
         if train_num_batches > config.num_batches:
             break
@@ -68,7 +62,6 @@ if __name__ == "__main__":
 
     # Set up the config
     config = Config(args.config_file)
-    config.update_dataset()
 
     # For non grid search, must set up exp dir
     if args.grid_search == "False":
